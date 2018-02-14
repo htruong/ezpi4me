@@ -222,7 +222,7 @@ a pain to deal with. The Panoma (blue) one works and works well.
 Thanks
 --
 
-- Code & knowledge: me-cleaner, Coreboot and the /r/chrultrabook people.
+- Code & knowledge: me-cleaner, Coreboot, John Lewis, /r/chrultrabook.
 
 - My personal thanks to Dr. Don Bindner, bunnie, vnhacker 
 for advice and support.
