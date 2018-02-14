@@ -82,7 +82,7 @@ to the Pi via USB-serial. Easier just to boot your Mac with a live Linux distro.
 Prepare the image
 --
 
-Now you can run this script in this repo in any Linux distro to 
+Now you can run the script in this repo in any Linux distro to 
 create a ezpi4me image. Some of live distros are alright. Don't use Windows.
 
 If you want to also flash coreboot at the same time you clean the ME, you need 
@@ -91,7 +91,7 @@ and name it `coreboot.bin`. It will be copied to `/home/pi/coreboot.rom`.
 
 Fedora:
 
-    $ dnf install qemu-user-static kpartx parted 
+    $ sudo dnf install qemu-user-static kpartx parted 
     $ sudo systemctl restart systemd-binfmt.service
     $ sudo ./make-ezpi4me.sh
     
@@ -252,6 +252,11 @@ Should I buy one?**
 
 Be mindful of the pitch of the clip legs. Some are not 0.1 inch and it will be 
 a pain to deal with. The Panoma (blue) one works and works well.
+
+- **What do I do if I have a 1.8V chip?**
+
+I don't know. Use a level shifter. I might be able to get a circuit board working
+in the future... That's in the TODO. But you'd have to have additional hardware.
 
 
 
