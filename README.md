@@ -1,4 +1,4 @@
-# ezpi4ME - Getting rid of Intel ME, for mere morals
+# ezpi4ME - Getting rid of Intel ME, for mere mortals
 
 _The easiest, and most straightforward method to clean Intel ME on any machine._
 
@@ -10,7 +10,7 @@ Why did I do this?
 
 Freedom from binary blobs shouldn't be hard or expensive.
 
-This is after a person said, "you need to make it easy for us mere morals, man."
+This is after a person said, "you need to make it easy for us mere mortals."
 
 One doesn't need to be an electrical engineer to do be able to clean 
 the ME on your computer. Just run some simple commands and connect 6 wires to 
