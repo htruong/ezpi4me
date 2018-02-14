@@ -19,7 +19,7 @@ TEMP_CHROOT_DIR=/mnt/raspbian-temp
 
 bail_and_cleanup() {
     kpartx -d $1 
-    rm $2
+    # rm $2
 }
 
 check_command_ok() {
@@ -89,8 +89,8 @@ EOF
 
 set_up_loopdevs() {
     # mount the resized partition
-    LOOPPARTSRET=$(kpartx -v -a ${IMAGE_FILE_CUSTOMIZED})
-    LOOPPARTSID=`echo ${LOOPPARTSRET} | sed 's/add map //' | cut -f1 -d' ' | sed 's/p1$//'`
+    kpartx -v -a ${IMAGE_FILE_CUSTOMIZED} | tee /tmp/kpartx-output.txt
+    LOOPPARTSID=`cat /tmp/kpartx-output.txt | head -n1 | sed 's/add map //' | cut -f1 -d' ' | sed 's/p1$//'`
 
     #echo "-- LoopFS setup --\n${LOOPPARTSRET}"
     echo "The loop device is ${LOOPPARTSID}"
