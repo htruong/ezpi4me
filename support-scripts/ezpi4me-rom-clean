@@ -6,7 +6,7 @@
 
 if [ -f coreboot.bin ]; then
     echo "Notice: I'm cleaning the coreboot.bin file."
-    python /usr/local/bin/me_cleaner.py -O coreboot.bin coreboot.bin
+    python /usr/local/bin/me_cleaner.py -O bios_cleaned.bin coreboot.bin
 else
     echo "Notice: I'm cleaning the bios_backup.bin file."
     python /usr/local/bin/me_cleaner.py -O bios_cleaned.bin bios_backup.bin

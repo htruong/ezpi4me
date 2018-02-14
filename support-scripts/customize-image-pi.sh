@@ -29,7 +29,7 @@ change_bootconfig() {
 get_deps() {
     apt update
     #apt upgrade
-    apt install git flashrom
+    apt -y install git flashrom
 }
 
 mark_script_run() {
