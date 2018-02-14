@@ -46,15 +46,18 @@ to put the ROM file you prepared to the folder `coreboot`
 and name it `coreboot.bin`. It will be copied to `/home/pi/coreboot.rom`.
 
 Fedora:
+
     $ dnf install qemu-user-static kpartx parted 
     $ sudo systemctl restart systemd-binfmt.service
     $ sudo ./make-ezpi4me.sh
     
 Debian/Ubuntu:
+
     $ sudo apt install qemu-user-static kpartx parted 
     $ sudo ./make-ezpi4me.sh
     
 Write the image, should be named `ezpi4me.img` to the micro-SD card. 
+
     $ sudo dd if=ezpi4me.img of=/dev/Your_MicroSD_card
 
 Wirings and flash the hardware
@@ -74,9 +77,9 @@ Now, you have two ways to proceed:
 Pi 0 using the USB OTG port on the Pi 0 (NOT PWR) -- that's the middle, not the 
 outermost micro-USB port. Now install `screen` (Linux) or Putty (Win). On Linux:
 
-    $ sudo screen /dev/ttyUSB0 115200
-    or
-    $ sudo screen /dev/ttyACM0 115200
+        $ sudo screen /dev/ttyUSB0 115200
+        or
+        $ sudo screen /dev/ttyACM0 115200
     
 On Windows, use Putty to create a new connection to connect to whatever COM port
 that shows up in Device Manager.
