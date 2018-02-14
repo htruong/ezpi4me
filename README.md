@@ -183,7 +183,7 @@ root access can write over your UEFI firmware. I leave it fastened.
 Thanks
 --
 
-- Code: me-cleaner, Coreboot and the Chromebook gangs.
+- Code & knowledge: me-cleaner, Coreboot and the /r/chrultrabook people.
 
 - My personal thanks to Dr. Don Bindner, bunnie, vnhacker 
 for advice and support.
