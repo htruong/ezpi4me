@@ -17,7 +17,7 @@ Because one doesn't need to be an electrical engineer to do be able to clean
 the ME on your computer with me_cleaner. Just run some simple commands and 
 connect 6 wires on a Raspberry Pi.
 
-As a hacker said, "you need to make it easy for us mere morals."
+As a hacker said, "you need to make it easy for us mere morals, man."
 
 Instructions
 --
