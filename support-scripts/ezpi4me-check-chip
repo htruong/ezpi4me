@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# ezpi4me
+# Written by Huan Truong <htruong@tnhh.net>, 2018
+# This script is licensed under GNU Public License v3
+
+flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=1000
