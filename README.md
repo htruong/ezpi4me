@@ -17,7 +17,7 @@ Because one doesn't need to be an electrical engineer to do be able to clean
 the ME on your computer with me_cleaner. Just run some simple commands and 
 connect 6 wires on a Raspberry Pi.
 
-As a hacker said, "you need to make it easy for us mere morals, man."
+This is after a person said, "you need to make it easy for us mere morals, man."
 
 Instructions
 --
@@ -86,10 +86,11 @@ that shows up in Device Manager.
 
 Press Enter a couple of times so it shows the login prompt after you connect.
 
+**Note: The first boot is slow. It might take 10-15 minutes before the login 
+prompt shows up. It won't have debug text. Be patient.**
+
 - Alternatively, you can use a USB-OTG cable, a mini-HDMI to HDMI adapter, 
 a USB keyboard, to connect to the Pi Zero directly. You'll need to type on it.
-
-
 
 Later versions of ezpi4me might do everything automatically for you without 
 requiring you to type, but this is process is too dangerous and error-prone 
@@ -147,6 +148,22 @@ The region of the Intel ME is protected, it does not allow anything
 to write over itself on the same computer. You have to have an external
 programmer.
 
+- **Do I have to use coreboot?**
+
+No. Even if you use your computer's default firmware, it should work.
+
+In the case of Chromebook it will just mean that you'll run ChromeOS 
+without Intel ME. 
+
+You can't check it without root/developer access and a chroot.
+
+- **How do I know my computer is free of Intel ME after I've done this?**
+
+On Linux:
+Clone the coreboot repository, then compile the `intelmetool` and run it.
+
+On Windows: You don't see the Intel ME controller in Device Manager no more.
+
 - **How do I know my chip is 3.3V tolerant?**
 
 Look at the markings of the chip, then Google chip_name + datasheet.
@@ -161,6 +178,15 @@ write-protect screw is fastened or not.
 
 It's your choice. However, if you leave it unfastened, anything that has 
 root access can write over your UEFI firmware. I leave it fastened.  
+
+
+Thanks
+--
+
+- Code: me-cleaner, Coreboot and the Chromebook gangs.
+
+- My personal thanks to Dr. Don Bindner, bunnie, vnhacker 
+for advice and support.
 
 
 Have fun!
