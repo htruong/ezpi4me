@@ -25,7 +25,7 @@ The ME firmware is very big, so the code doesn't reside on the Intel CPU hardwar
 
 The problem is you can't just feed the CPU a totally bogus ME code. Before the CPU runs the code, it will check certain signatures and if the signature doesn't match, the CPU won't run it. The me-cleaner software changes the firmware in an extremely clever way: the botched code still passes some minimum security requirements, the CPU still executes it, and it still flags the ME as somewhat operational, and thus the watchdog is still happy.
 
-Now the layout of the firmware has also one more tidbit. You mark a certain region of the chip to be extremely critical, to prevent that region from ever be written on. In the factory firmware, that region is often marked as extremely critical, that's why you can't just change the ME firmware from the machine itself (even when you can update and flash a new firmware from the machine itself).
+Now the layout of the firmware has also one more tidbit. On the firmware, you can mark a certain region of the chip to be extremely critical, to prevent that region from ever be written on. In the factory firmware, the ME region is often marked as extremely critical, that's why you can't just change the ME firmware from the machine itself (even when you can update and flash a new firmware from the machine itself).
 
 In short, an analogy of that that is like you can't install and run the anti-virus from an infected computer - if the virus itself is smart enough, it could prevent any anti-virus being run. You'd have to start with a clean computer, and plug the infected HDD in, and clean it from there. The Raspberry Pi is acting as the "clean" computer to clean the virus here.
 
@@ -217,7 +217,7 @@ You can take the shortcut: Go to
     https://github.com/MattDevo/scripts/blob/master/sources.sh
 
 then look for your `full-rom URL=fullrom_source+coreboot_uefi_yourdev`
-For example, for Dell Chromebook 13 (lulu) is it:
+For example, for Dell Chromebook 13 (lulu) it is:
 
     https://www.mrchromebox.tech/files/firmware/full_rom/coreboot_tiano-lulu-mrchromebox_20180204.rom
 
