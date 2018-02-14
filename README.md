@@ -48,7 +48,6 @@ by releasing a 2GB blob and tell everyone to run it). I finally got up my butt
 and did it. Every script is extremely simple and can be audited quickly.
 
 
-
 Tested platforms
 --
 
@@ -58,12 +57,18 @@ It should work with many other Chromebooks and Thinkpads, but have not been
 verified. If you succeeded cleaning your ME with this method, please send me 
 an email.
 
+
 Beware
 --
 
 **Remember, that ultimately you're responsible for trying this with your machine.**
 I can't guarrantee that it will work. I can't guarrantee that what I told you to do 
 won't fry your $4000 laptop. I wrote it the whole thing in ten hours. 
+
+That being said, I have put every safeguard I could think of and made this process
+as simple and clear as possible. As long as you don't fry your chip by connecting
+a 1.8V chip to the 3.3V Raspberry Pi, the process is entirely undoable.
+
 
 Instructions
 --
