@@ -145,12 +145,12 @@ scheme:
     RPi header  SPI flash
     25          GND
     24          CS#
-    25          SCK
+    23          SCLK
     21          MISO/DO
     19          MOSI/DI
     17          VCC 
 
-If you're confused, I have a video here: 
+If you're confused, I have a video here, your setup should look roughly like this.
 https://www.youtube.com/watch?v=YnUPf3e0ZFM
 
 You do not need to wire pin 3 and pin 7 on the clip.
@@ -246,9 +246,8 @@ Why does anyone run GNU/Linux instead of Windows 10?
 No. Even if you use your computer's default firmware, it should work.
 
 In the case of Chromebook it will just mean that you'll run ChromeOS 
-without Intel ME. 
-
-You can't check it without root/developer access and a chroot.
+without Intel ME. On ChromeOS, you can't check to make sure that the ME 
+is actually gone without root/developer access and a chroot.
 
 - **How do I know my computer is free of Intel ME after I've done this?**
 
@@ -273,15 +272,6 @@ If it helps, mine looks like this.
 Look at the markings of the chip, then Google chip_name + datasheet.
 If you have a Winbond W25Q64.V chip, it is sure to be 3.3V tolerant.
 
-- **Do I have to locate and unfasten the write-protect screw?** 
-
-No. The Pi talks to the chip directly, it doesn't care if the 
-write-protect screw is fastened or not.
-
-- **Should I leave the write-protect screw unfastened?**
-
-It's your choice. However, if you leave it unfastened, anything that has 
-root access can write over your UEFI firmware. I leave it fastened.  
 
 - **Do I need to disconnect the laptop battery when I flash the firmware?**
 
@@ -303,6 +293,19 @@ a pain to deal with. The Panoma (blue) one works and works well.
 I don't know. Use a level shifter. I might be able to get a circuit board working
 in the future... That's in the TODO. But you'd have to have additional hardware.
 
+.
+
+**Chromebook-specifics**
+
+- **Do I have to locate and unfasten the write-protect screw?** 
+
+No. The Pi talks to the chip directly, it doesn't care if the 
+write-protect screw is fastened or not.
+
+- **Should I leave the write-protect screw unfastened?**
+
+It's your choice. However, if you leave it unfastened, anything that has 
+root access can write over your UEFI firmware. I leave it fastened.  
 
 
 
