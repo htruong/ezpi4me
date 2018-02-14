@@ -1,4 +1,4 @@
-# [EzPi4ME - Getting rid of Intel ME, for mere mortals](https://github.com/htruong/ezpi4me/)
+# [EzPi4ME - Getting rid of Intel ME, for mere mortals](http://www.tnhh.net/posts/ezpi4me-intel-me-be-gone.html)
 
 _The easiest, and most straightforward method to get rid of the Intel ME._
 
@@ -273,8 +273,10 @@ for advice and support.
 Have fun!
 --
 
-Have questions? Get answers: htruong@tnhh.net.
+Have questions? Create an issue on Github.
 
-Donations are welcome but not required. Paypal to the same email address.
+Comments? [Go to my blog](http://www.tnhh.net/posts/ezpi4me-intel-me-be-gone.html).
+
+Donations are welcome but not required. Paypal to htruong@tnhh.net.
 
 
