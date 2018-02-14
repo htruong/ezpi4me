@@ -235,6 +235,12 @@ The region of the Intel ME is protected, it does not allow anything
 to write over itself on the same computer. You have to have an external
 programmer.
 
+- **Why does anyone want to neuter the Intel ME?** 
+
+It often a matter of principles. 
+
+Why does anyone run GNU/Linux instead of Windows 10?
+
 - **Do I have to use coreboot?**
 
 No. Even if you use your computer's default firmware, it should work.
