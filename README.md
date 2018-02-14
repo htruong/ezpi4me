@@ -1,8 +1,8 @@
 # ezpi4ME - Getting rid of Intel ME, for mere morals
 
 
-This script creates a Raspberry 0 image that can run mecleaner automatically.
-Everything else you need is a Ponoma SOIC-8 clip and a 6 female jumper wires. 
+This script creates a Raspberry 0 (or any Raspberry Pi) image that can run 
+me_cleaner automatically.
 
 This pipeline has been tested to work on a Dell Chromebook 7310. 
 It should work with many other Chromebooks and Thinkpads, but have not been 
@@ -13,25 +13,38 @@ an email.
 Why did I do this? 
 --
 
-Because one doesn't need to be an electrical engineer to do be able to clean 
-the ME on your computer with me_cleaner. Just run some simple commands and 
-connect 6 wires on a Raspberry Pi.
+Freedom from binary blobs shouldn't be hard or expensive.
 
 This is after a person said, "you need to make it easy for us mere morals, man."
 
+One doesn't need to be an electrical engineer to do be able to clean 
+the ME on your computer. Just run some simple commands and connect 6 wires to 
+a Raspberry Pi.
+
+
 Instructions
 --
+
+You will need hardware-wise, a Raspberry Pi (Pi 0 WH is the easiest and cheap),
+a Ponoma SOIC-8 clip and 6 female2female jumper wires, and a microUSB cable.
+You'll also need a microSD card >= 2GB. If you really want to be cheap, buy a 
+Pi 0 original for $5 in Microcenter, but then you'll have to solder the headers.
+
+![Raspberry Pi 0 WH](https://i.imgur.com/OcKklYym.jpg)
+![Female2Female](https://i.imgur.com/SOQtFipm.jpg)
+![SOIC clip](https://i.imgur.com/ovZ6Ao0m.jpg)
+![MicroSD](https://i.imgur.com/qwgiGlJm.jpg)
+
 
 Have the "target" computer to clean. Open it up, make sure that it has a SOIC-8
 flash chip. **MAKE VERY SURE** the chip is 3.3V or 3.3V-tolerant. Many 
 Chromebooks use 3.3V chips.
 
-You'll also need a Raspberry Pi 0 WH (if you don't want to solder headers), 
-a Panoma SOIC 8 clip, and 6 female-to-female jumper wires, and a microSD card.
+If you use the Pi 0, you'll need a "spare" computer that can be used to control it,
+alternatively you can attach a set of keyboard/HDMI cables/monitor to type to the
+Raspberry Pi. 
 
-You'll need a "spare" computer that can be used to control the Raspberry Pi, or
-alternatively you can have a set of keyboard/HDMI cables/monitor to type to the
-Raspberry Pi. The spare computer can run Linux or Windows, doesn't matter. 
+The spare computer can run Linux or Windows, doesn't matter. 
 I'm not sure about Macs, you'll need to install drivers on Mac to get it to talk
 to the Pi via USB-serial. Easier just to boot your Mac with a live Linux distro.
 
@@ -178,6 +191,14 @@ write-protect screw is fastened or not.
 
 It's your choice. However, if you leave it unfastened, anything that has 
 root access can write over your UEFI firmware. I leave it fastened.  
+
+- **I saw the black SOIC clips on sale on eBay/Aliexpress for much cheaper.
+Should I buy one?**
+
+Be mindful of the pitch of the clip. Some are not 0.1 inch and it will be 
+a pain to deal with. The Panoma (blue) one works and works well.
+
+
 
 
 Thanks
