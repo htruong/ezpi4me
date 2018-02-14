@@ -16,13 +16,12 @@ One doesn't need to be an electrical engineer to do be able to clean
 the ME on your computer. Just run some simple commands and connect 6 wires to 
 a Raspberry Pi.
 
-I've been thinking about this project for a year, but prototyping was easy 
+I've been thinking about this project for over a year, but prototyping was easy 
 because I can just carry a customized Pi image with me. Now, to release
 to the public the source and customization process, there is a lot of scripting
-needed (because what's the point of replacing Intel ME blob by writing my 2GB
-blob to a Raspberry Pi SD card and run it). I finally got up my butt and did it.
-This project only has a couple of simple scripts that you can easily verify
-that helps you get rid of the Intel ME blob.
+needed (because what's the point of advocating removing the 8MB Intel ME blob 
+by releasing a 2GB blob and tell everyone to run it). I finally got up my butt 
+and did it. Every script is extremely simple and can be audited quickly.
 
 Tested platforms
 --
@@ -33,6 +32,12 @@ It should work with many other Chromebooks and Thinkpads, but have not been
 verified. If you succeeded cleaning your ME with this method, please send me 
 an email.
 
+Beware
+--
+
+**Remember, that ultimately you're responsible for trying this with your machine.**
+I can't guarrantee that it will work. I can't guarrantee that what I told you to do 
+won't fry your $4000 laptop. I wrote it the whole thing in ten hours. 
 
 Instructions
 --
@@ -210,10 +215,15 @@ write-protect screw is fastened or not.
 It's your choice. However, if you leave it unfastened, anything that has 
 root access can write over your UEFI firmware. I leave it fastened.  
 
+- **Do I need to disconnect the laptop battery when I flash the firmware?**
+
+You really should. But sometimes I forgot to do it and it didn't hurt the
+machine.
+
 - **I saw the black SOIC clips on sale on eBay/Aliexpress for much cheaper.
 Should I buy one?**
 
-Be mindful of the pitch of the clip. Some are not 0.1 inch and it will be 
+Be mindful of the pitch of the clip legs. Some are not 0.1 inch and it will be 
 a pain to deal with. The Panoma (blue) one works and works well.
 
 
