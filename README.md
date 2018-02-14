@@ -27,7 +27,8 @@ that helps you get rid of the Intel ME blob.
 Tested platforms
 --
 
-This pipeline has been tested to work on a Dell Chromebook 7310. 
+This pipeline has been tested to work on a Dell Chromebook 7310. That's all I have.
+
 It should work with many other Chromebooks and Thinkpads, but have not been 
 verified. If you succeeded cleaning your ME with this method, please send me 
 an email.
@@ -36,16 +37,18 @@ an email.
 Instructions
 --
 
-You will need hardware-wise, a Raspberry Pi (Pi 0 WH is the easiest and cheap),
+You will need hardware-wise: a Raspberry Pi (Pi 0 WH is the easiest and cheap),
 a Ponoma SOIC-8 clip and 6 female2female jumper wires, and a microUSB cable.
 You'll also need a microSD card >= 2GB. If you really want to be cheap, buy a 
 Pi 0 original for $5 in Microcenter, but then you'll have to solder the headers.
+
+The Bill of Materials should about less than $50 in total. More likely than not
+you already have everything here, except for the SOIC-8 clip.
 
 ![Raspberry Pi 0 WH](https://i.imgur.com/OcKklYym.jpg)
 ![Female2Female](https://i.imgur.com/SOQtFipm.jpg)
 ![SOIC clip](https://i.imgur.com/ovZ6Ao0m.jpg)
 ![MicroSD](https://i.imgur.com/qwgiGlJm.jpg)
-
 
 Have the "target" computer to clean. Open it up, make sure that it has a SOIC-8
 flash chip. **MAKE VERY SURE** the chip is 3.3V or 3.3V-tolerant. Many 
