@@ -200,6 +200,17 @@ Clone the coreboot repository, then compile the `intelmetool` and run it.
 
 On Windows: You don't see the Intel ME controller in Device Manager no more.
 
+![intelmetool](https://i.imgur.com/KN0yyKt.png)
+
+- **Where is the flash chip?**
+
+It often has 8 legs, but you'll have to search online to see where exactly the
+chip is located on your machine model.
+
+If it helps, mine looks like this.
+
+![chip](https://i.imgur.com/MVtMyXvm.jpg)
+
 - **How do I know my chip is 3.3V tolerant?**
 
 Look at the markings of the chip, then Google chip_name + datasheet.
@@ -219,6 +230,10 @@ root access can write over your UEFI firmware. I leave it fastened.
 
 You really should. But sometimes I forgot to do it and it didn't hurt the
 machine.
+
+- **How do I know what's the pin 1 on the SOIC clip?**
+
+It doesn't matter, you select any corner and mark it. Then it's your pin 1.
 
 - **I saw the black SOIC clips on sale on eBay/Aliexpress for much cheaper.
 Should I buy one?**
