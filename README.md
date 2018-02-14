@@ -69,7 +69,7 @@ you already have everything here, except for the SOIC-8 clip.
 
 Have the "target" computer to clean. Open it up, make sure that it has a SOIC-8
 flash chip. **MAKE VERY SURE** the chip is 3.3V or 3.3V-tolerant. Many 
-Chromebooks use 3.3V chips.
+Chromebooks use 3.3V chips, but it looks like some use 1.8V chips.
 
 If you use the Pi 0, you'll need a "spare" computer that can be used to control it,
 alternatively you can attach a set of keyboard/HDMI cables/monitor to type to the
@@ -221,9 +221,9 @@ chip is located on your machine model.
 
 If it helps, mine looks like this.
 
-![chip](https://i.imgur.com/MVtMyXvm.jpg)
+![chip](https://i.imgur.com/MVtMyXv.jpg)
 
-- **How do I know my chip is 3.3V tolerant?**
+- **How do I know my chip is 3.3V?**
 
 Look at the markings of the chip, then Google chip_name + datasheet.
 If you have a Winbond W25Q64.V chip, it is sure to be 3.3V tolerant.
