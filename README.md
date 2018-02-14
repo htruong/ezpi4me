@@ -111,6 +111,60 @@ Run them in this order:
 
 After you ran those commands, the "target" computer will be free of Intel ME.
 
+Chromebooks specifics
+--
+
+Chromebooks have UEFI builds by MrChromebox at http://MrChromebox.tech
+
+After you have flashed his firmware, you won't be able to boot stock 
+ChromeOS anymore, but Linux and Windows (and possibly macOS, in the 
+future) will run.
+
+There are several ways to do it. You can either do the long-way: Follow his 
+intructions to have the UEFI firmware installed (do the write protection 
+screw thing), then run ezpi4me route: do the backup-clean-reflash.
+
+You can take the shortcut: Go to
+
+    https://github.com/MattDevo/scripts/blob/master/sources.sh
+
+then look for your `full-rom URL=fullrom_source+coreboot_uefi_yourdev`
+For example, for Dell Chromebook 13 (lulu) is it:
+
+    https://www.mrchromebox.tech/files/firmware/full_rom/coreboot_tiano-lulu-mrchromebox_20180204.rom
+
+Download that file, rename it to `coreboot.bin`.
+Put it in the `coreboot` folder in ezpi4me, run the `make-ezpi4me.sh` script
+Then boot the pi, do the backup-clean-reflash routine. 
+
+FAQs
+--
+
+- **Why can't I just flash the cleaned UEFI firmware directly 
+on the same laptop?**
+
+The region of the Intel ME is protected, it does not allow anything
+to write over itself on the same computer. You have to have an external
+programmer.
+
+- **How do I know my chip is 3.3V tolerant?**
+
+Look at the markings of the chip, then Google chip_name + datasheet.
+If you have a Winbond W25Q64.V chip, it is sure to be 3.3V tolerant.
+
+- **Do I have to locate and unfasten the write-protect screw?** 
+
+No. The Pi talks to the chip directly, it doesn't care if the 
+write-protect screw is fastened or not.
+
+- **Should I leave the write-protect screw unfastened?**
+
+It's your choice. However, if you leave it unfastened, anything that has 
+root access can write over your UEFI firmware. I leave it fastened.  
+
+
+Have fun!
+--
 
 Have questions? Get answers: htruong@tnhh.net.
 
