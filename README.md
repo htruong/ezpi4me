@@ -141,7 +141,7 @@ scheme:
 	    GND    4═╣         ╠═5    MOSI
 	             ╚═════════╝
 
-    RPi header 	SPI flash
+    RPi header  SPI flash
     25          GND
     24          CS#
     25          SCK
