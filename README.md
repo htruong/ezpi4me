@@ -62,10 +62,10 @@ Pi 0 original for $5 in Microcenter, but then you'll have to solder the headers.
 The Bill of Materials should about less than $50 in total. More likely than not
 you already have everything here, except for the SOIC-8 clip.
 
-![Raspberry Pi 0 WH](https://i.imgur.com/OcKklYym.jpg)
-![Female2Female](https://i.imgur.com/SOQtFipm.jpg)
-![SOIC clip](https://i.imgur.com/ovZ6Ao0m.jpg)
-![MicroSD](https://i.imgur.com/qwgiGlJm.jpg)
+![Raspberry Pi 0 WH](https://i.imgur.com/OcKklYys.jpg)
+![Female2Female](https://i.imgur.com/SOQtFips.jpg)
+![SOIC clip](https://i.imgur.com/ovZ6Ao0s.jpg)
+![MicroSD](https://i.imgur.com/qwgiGlJs.jpg)
 
 Have the "target" computer to clean. Open it up, make sure that it has a SOIC-8
 flash chip. **MAKE VERY SURE** the chip is 3.3V or 3.3V-tolerant. Many 
