@@ -129,6 +129,26 @@ Wirings and flash the hardware
 Wire the SOIC clip to the Pi according to this guide: 
 https://www.flashrom.org/RaspberryPi
 
+All Chromebooks and Thinkpads I'm aware of so far has the same wiring
+scheme:
+
+	              ┌───── Little "dot" on the chip
+	              │ 
+	             ╔═════════╗
+	    CS#    1═╣o        ╠═8    VCC
+	   MISO    2═╣         ╠═7    ---
+	    ---    3═╣         ╠═6    SCLK
+	    GND    4═╣         ╠═5    MOSI
+	             ╚═════════╝
+
+    RPi header 	SPI flash
+    25          GND
+    24          CS#
+    25          SCK
+    21          MISO/DO
+    19          MOSI/DI
+    17          VCC 
+
 If you're confused, I have a video here: 
 https://www.youtube.com/watch?v=YnUPf3e0ZFM
 
