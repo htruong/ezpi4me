@@ -24,6 +24,7 @@ change_bootconfig() {
     sed -i 's/ quiet init\=.*$/ modules-load=dwc2,g_serial/' /boot/cmdline.txt
     echo "dtoverlay=dwc2" >> /boot/config.txt
     echo "dtparam=spi=on" >> /boot/config.txt
+    systemctl enable getty@ttyGS0.service
 }
 
 get_deps() {

@@ -2,20 +2,22 @@
 
 
 This script creates a Raspberry 0 image that can run mecleaner automatically.
-Everything else you need is a Ponoma clip and a couple of wires. 
+Everything else you need is a Ponoma SOIC-8 clip and a 6 female jumper wires. 
 
-This script has been only officially test
+This pipeline has been tested to work on a Dell Chromebook 7310. 
+It should work with many other Chromebooks and Thinkpads, but have not been 
+verified. If you succeeded cleaning your ME with this method, please send me 
+an email.
+
 
 Why did I do this? 
 --
-Because you don't need to be an electrical engineer to do be able to clean 
-the ME on your computer with me_cleaner.
+
+Because one doesn't need to be an electrical engineer to do be able to clean 
+the ME on your computer with me_cleaner. Just run some simple commands and 
+connect 6 wires on a Raspberry Pi.
 
 As a hacker said, "you need to make it easy for us mere morals."
-
-Tested platforms
---
-Tested on amd64 Fedora and Ubuntu.
 
 Instructions
 --
@@ -24,12 +26,14 @@ Have the "target" computer to clean. Open it up, make sure that it has a SOIC-8
 flash chip. **MAKE VERY SURE** the chip is 3.3V or 3.3V-tolerant. Many 
 Chromebooks use 3.3V chips.
 
-You'll also need a Raspberry Pi 0 WH (if you don't want to solder), 
+You'll also need a Raspberry Pi 0 WH (if you don't want to solder headers), 
 a Panoma SOIC 8 clip, and 6 female-to-female jumper wires, and a microSD card.
 
 You'll need a "spare" computer that can be used to control the Raspberry Pi, or
 alternatively you can have a set of keyboard/HDMI cables/monitor to type to the
-Raspberry Pi. The spare computer can run Linux or Windows, doesn't matter.
+Raspberry Pi. The spare computer can run Linux or Windows, doesn't matter. 
+I'm not sure about Macs, you'll need to install drivers on Mac to get it to talk
+to the Pi via USB-serial. Easier just to boot your Mac with a live Linux distro.
 
 Prepare the image
 --
@@ -77,13 +81,22 @@ outermost micro-USB port. Now install `screen` (Linux) or Putty (Win). On Linux:
 On Windows, use Putty to create a new connection to connect to whatever COM port
 that shows up in Device Manager.
 
+Press Enter a couple of times so it shows the login prompt after you connect.
+
 - Alternatively, you can use a USB-OTG cable, a mini-HDMI to HDMI adapter, 
 a USB keyboard, to connect to the Pi Zero directly. You'll need to type on it.
-Later versions it might do it automatically for you without having you to type,
-but this is too dangerous to have it automated now.
+
+
+
+Later versions of ezpi4me might do everything automatically for you without 
+requiring you to type, but this is process is too dangerous and error-prone 
+to have it automated now.
+
 
 Connect the chip on the "target" to the SOIC clip. Make sure leg #1 matches :)
 
+
+Log in with username pi, and password raspberry.
 Anyway, now you're at the command line. ezpi4me has the following utilities.
 
 Run them in this order:
@@ -96,4 +109,8 @@ Run them in this order:
 After you ran those commands, the "target" computer will be free of Intel ME.
 
 
-Have questions? Get answers: htruong@tnhh.net
+Have questions? Get answers: htruong@tnhh.net.
+
+Donations are welcome but not required. Paypal to the same email address.
+
+

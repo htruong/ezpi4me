@@ -9,6 +9,7 @@ IMAGE_FILE_UNZIPPED=2017-11-29-raspbian-stretch-lite.img
 IMAGE_FILE_CUSTOMIZED=ezpi4me.img
 IMAGE_URL=http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2017-12-01/2017-11-29-raspbian-stretch-lite.zip
 IMAGE_SIZE_RAW=1858076672
+IMAGE_ROOTPART_START=94208
 TEMP_CHROOT_DIR=/mnt/raspbian-temp
 
 
@@ -38,7 +39,7 @@ check_root() {
 
 check_dependencies() {
     check_command_ok kpartx
-    check_command_ok parted
+    # check_command_ok parted
     check_command_ok qemu-arm-static
     check_command_ok chroot
 }
@@ -53,6 +54,7 @@ get_unzip_image() {
     if ! [ -f ${IMAGE_FILE_UNZIPPED} ]; then
         unzip ${IMAGE_FILE}
     fi
+    echo "Copying a big file..."
     cp ${IMAGE_FILE_UNZIPPED} ${IMAGE_FILE_CUSTOMIZED}
 }
 
@@ -67,11 +69,21 @@ resize_raw_image() {
     
     #resize image
     dd if=/dev/zero bs=1M count=128 >> ${IMAGE_FILE_CUSTOMIZED}
+    
+    PART_NUM=2
+    
+    fdisk ${IMAGE_FILE_CUSTOMIZED} <<EOF
+p
+d
+$PART_NUM
+n
+p
+$PART_NUM
+$IMAGE_ROOTPART_START
 
-    parted ${IMAGE_FILE_CUSTOMIZED} <<'END'
-    resizepart 2 -1s
-    quit
-END
+p
+w
+EOF
 
 }
 
