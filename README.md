@@ -2,15 +2,15 @@
 
 _The easiest, and most straightforward method to clean Intel ME on any machine._
 
-This project helps you create a Raspberry 0 (or any Raspberry Pi) image that can run 
-me_cleaner automatically.
+This project helps you create a Raspberry Pi image that can clean the 
+Intel ME blob from your machine. In other words, "me-cleaner for dummies."
 
 Why did I do this? 
 --
 
 Freedom from binary blobs shouldn't be hard or expensive.
 
-This is after a person said, "you need to make it easy for us mere mortals."
+This is after a person told me, "you need to make it easy for us mere mortals."
 
 One doesn't need to be an electrical engineer to do be able to clean 
 the ME on your computer. Just run some simple commands and connect 6 wires to 
