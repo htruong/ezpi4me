@@ -1,14 +1,9 @@
 # ezpi4ME - Getting rid of Intel ME, for mere morals
 
+_The easiest, and most straightforward method to clean Intel ME on any machine._
 
-This script creates a Raspberry 0 (or any Raspberry Pi) image that can run 
+This project helps you create a Raspberry 0 (or any Raspberry Pi) image that can run 
 me_cleaner automatically.
-
-This pipeline has been tested to work on a Dell Chromebook 7310. 
-It should work with many other Chromebooks and Thinkpads, but have not been 
-verified. If you succeeded cleaning your ME with this method, please send me 
-an email.
-
 
 Why did I do this? 
 --
@@ -20,6 +15,14 @@ This is after a person said, "you need to make it easy for us mere morals, man."
 One doesn't need to be an electrical engineer to do be able to clean 
 the ME on your computer. Just run some simple commands and connect 6 wires to 
 a Raspberry Pi.
+
+Tested platforms
+--
+
+This pipeline has been tested to work on a Dell Chromebook 7310. 
+It should work with many other Chromebooks and Thinkpads, but have not been 
+verified. If you succeeded cleaning your ME with this method, please send me 
+an email.
 
 
 Instructions
@@ -112,6 +115,7 @@ to have it automated now.
 
 Connect the chip on the "target" to the SOIC clip. Make sure leg #1 matches :)
 
+![Connect](https://i.imgur.com/a9rcEy6.jpg)
 
 Log in with username pi, and password raspberry.
 Anyway, now you're at the command line. ezpi4me has the following utilities.
@@ -124,6 +128,9 @@ Run them in this order:
     $ sudo ezpi4me-rom-reflash <-- flashes it back to the chip
 
 After you ran those commands, the "target" computer will be free of Intel ME.
+
+![Command line](https://i.imgur.com/fATqixY.png)
+
 
 Chromebooks specifics
 --
