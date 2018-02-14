@@ -5,6 +5,18 @@ _The easiest, and most straightforward method to clean Intel ME on any machine._
 This project helps you create a Raspberry Pi image that can clean the 
 Intel ME blob from your machine. In other words, "me-cleaner for dummies."
 
+What is the Intel Management Engine/Intel ME?
+--
+
+It's a binary blob on your firmware in the flash chip. It's a software that runs
+before anything  on your machine with the highest ring permission, that can access
+anything on your computer. It does a lot of (good?) things, but no one knows exactly 
+what the Intel ME is capable of.
+
+[It is a modified version of MINIX](http://www.cs.vu.nl/~ast/intel/).
+[One good overview is here](https://hackaday.com/2017/12/11/what-you-need-to-know-about-the-intel-management-engine/).
+
+
 Why did I do this? 
 --
 
