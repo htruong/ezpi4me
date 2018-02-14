@@ -1,4 +1,4 @@
-# ezpi4ME - Getting rid of Intel ME, for mere mortals
+# EzPi4ME - Getting rid of Intel ME, for mere mortals
 
 _The easiest, and most straightforward method to clean Intel ME on any machine._
 
