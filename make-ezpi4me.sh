@@ -94,10 +94,12 @@ set_up_loopdevs() {
 
     #echo "-- LoopFS setup --\n${LOOPPARTSRET}"
     echo "The loop device is ${LOOPPARTSID}"
+    sync
+    sleep 2
 
     # it should have two partitions at /dev/mapper
     if ! [ -L /dev/mapper/${LOOPPARTSID}p1 ]; then
-        echo "Couldn't find the loopdev partitions at /dev/mapper/${LOOPPARTSID}!"
+        echo "Couldn't find the loopdev partitions at /dev/mapper/${LOOPPARTSID}p1!"
         bail_and_cleanup /dev/${LOOPPARTSID} ${IMAGE_FILE_CUSTOMIZED}
         exit 1
     fi
@@ -106,7 +108,10 @@ set_up_loopdevs() {
     LOOPDEVPARTS=/dev/mapper/${LOOPPARTSID}
 
     e2fsck -f ${LOOPDEVPARTS}p2
-    e2fsck ${LOOPDEVPARTS}p2
+
+    resize2fs ${LOOPDEVPARTS}p2
+
+    e2fsck -f ${LOOPDEVPARTS}p2
 
     mount_chroot_dirs ${LOOPDEVPARTS} ${LOOPPARTSID}
     
@@ -126,7 +131,9 @@ set_up_loopdevs() {
     cp coreboot/coreboot.bin ${TEMP_CHROOT_DIR}/home/pi/coreboot.bin
     
     cp support-scripts/customize-image-pi.sh ${TEMP_CHROOT_DIR}/root/
-    
+
+    sync
+    sleep 1
     
     # phew, customize it
     chroot ${TEMP_CHROOT_DIR} /bin/bash /root/customize-image-pi.sh

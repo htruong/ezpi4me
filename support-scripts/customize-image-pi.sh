@@ -50,7 +50,7 @@ if [ -f /etc/customizer_done ]; then
     exit 0
 fi
 
-cd 
+cd /root/ 
 
 print_banner
 
