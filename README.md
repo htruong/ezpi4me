@@ -1,6 +1,6 @@
 # [EzPi4ME - Getting rid of Intel ME, for mere mortals](https://github.com/htruong/ezpi4me/)
 
-_The easiest, and most straightforward method to clean Intel ME on any machine._
+_The easiest, and most straightforward method to get rid of the Intel ME._
 
 This project helps you create a Raspberry Pi image that can clean the 
 Intel ME blob from your machine. In other words, "me-cleaner for dummies."
