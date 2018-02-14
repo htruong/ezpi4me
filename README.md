@@ -16,6 +16,14 @@ One doesn't need to be an electrical engineer to do be able to clean
 the ME on your computer. Just run some simple commands and connect 6 wires to 
 a Raspberry Pi.
 
+I've been thinking about this project for a year, but prototyping was easy 
+because I can just carry a customized Pi image with me. Now, to release
+to the public the source and customization process, there is a lot of scripting
+needed (because what's the point of replacing Intel ME blob by writing my 2GB
+blob to a Raspberry Pi SD card and run it). I finally got up my butt and did it.
+This project only has a couple of simple scripts that you can easily verify
+that helps you get rid of the Intel ME blob.
+
 Tested platforms
 --
 
