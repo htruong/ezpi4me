@@ -176,8 +176,7 @@ prompt shows up. It won't have debug text. Be patient.**
 a USB keyboard, to connect to the Pi Zero directly. You'll need to type on it.
 
 Later versions of ezpi4me might do everything automatically for you without 
-requiring you to type, but this is process is too dangerous and error-prone 
-to have it automated now.
+requiring you to type, but I'd rather have you see and control the process now.
 
 
 Connect the chip on the "target" to the SOIC clip. Make sure leg #1 matches :)
