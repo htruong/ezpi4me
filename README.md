@@ -9,7 +9,8 @@ What is the Intel Management Engine/Intel ME?
 --
 
 It's a binary blob on your firmware in the flash chip. It's a software that runs
-before anything  on your machine with the highest ring permission, that can access
+independently of the main CPU on a co-processor all the times (even when the machine is off)
+and before anything on your machine with the highest ring permission. It can access
 anything on your computer. It does a lot of (good?) things, but no one knows exactly 
 what the Intel ME is capable of.
 
