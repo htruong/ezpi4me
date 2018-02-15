@@ -1,6 +1,6 @@
 # [EzPi4ME - Getting rid of Intel ME, for mere mortals](http://www.tnhh.net/posts/ezpi4me-intel-me-be-gone.html)
 
-_The easiest straightforward method to get rid of the Intel ME._
+> The easiest straightforward method to get rid of the Intel ME.
 
 This project helps you to create a Raspberry Pi image that can clean the 
 Intel ME blob from your machine and optionally install Core/libreboot. 
@@ -150,10 +150,9 @@ Write the image to the micro-SD card. It should be named `ezpi4me.img`.
 Wirings and flash the hardware
 --
 
-Wire the SOIC clip to the Pi according to this guide: 
-https://www.flashrom.org/RaspberryPi
+Wire the SOIC clip to the Pi according to [this guide](https://www.flashrom.org/RaspberryPi).
 
-All Chromebooks I'm aware of so far has the same wiring scheme.
+All Chromebooks I'm aware of so far have the same wiring scheme.
 Not sure about Thinkpads, please refer to the datasheets:
 
 	              ┌───── Little "dot" on the chip
@@ -173,14 +172,13 @@ Not sure about Thinkpads, please refer to the datasheets:
     19          MOSI/DI
     17          VCC 
 
-If you're confused, I have a video here, your setup should look roughly like this.
-https://www.youtube.com/watch?v=YnUPf3e0ZFM
+If you're confused, I have a video [here](https://www.youtube.com/watch?v=YnUPf3e0ZFM), your setup should look roughly like this.
 
 You do not need to wire pin 3 and pin 7 on the clip.
 
 Now, you have two ways to proceed:
 
-- Easiest: You need another linux/windows computer. Plug the micro-USB to the 
+- Easiest way: You need another linux/windows computer. Plug the micro-USB to the 
 Pi 0 using the USB OTG port on the Pi 0 (NOT PWR) -- that's the middle, not the 
 outermost micro-USB port. Now install `screen` (Linux) or Putty (Win). On Linux:
 
@@ -188,29 +186,29 @@ outermost micro-USB port. Now install `screen` (Linux) or Putty (Win). On Linux:
         or
         $ sudo screen /dev/ttyACM0 115200
     
-On Windows, use Putty to create a new connection to connect to whatever COM port
+On Windows, use Putty to create a new connection to whatever COM port
 that shows up in Device Manager.
 
-Press Enter a couple of times so it shows the login prompt after you connect.
+Press _Enter_ a couple of times so it shows the login prompt after you connect.
 
 **Note: The first boot is slow. It might take 10-15 minutes before the login 
-prompt shows up. It won't have debug text. Be patient.**
+prompt shows up. There won't be debug text. Be patient.**
 
-- Alternatively, you can use a USB-OTG cable, a mini-HDMI to HDMI adapter, 
-a USB keyboard, to connect to the Pi Zero directly. You'll need to type on it.
+- Alternatively, you can use a USB-OTG cable, a mini-HDMI to HDMI adapter and 
+a USB keyboard to connect to the Pi Zero directly (for typing).
 
 Later versions of ezpi4me might do everything automatically for you without 
-requiring you to type, but I'd rather have you see and control the process now.
+requiring you to type, however I would rather have you to see and control the process now.
 
 
 Connect the chip on the "target" to the SOIC clip. Make sure leg #1 matches :)
 
 ![Connect](https://i.imgur.com/a9rcEy6.jpg)
 
-Log in with username pi, and password raspberry.
-Anyway, now you're at the command line. ezpi4me has the following utilities.
+Log in with username _pi_, and password _raspberry_.
+Anyway, now you're at the command line.
 
-Run them in this order:
+ezpi4me has the following utilities. Run them in this order:
 
     $ sudo ezpi4me-check-chip  <-- checks if you see the chip
     $ sudo ezpi4me-rom-backup  <-- backs up the current ROM from the chip
@@ -225,28 +223,28 @@ After you ran those commands, the "target" computer will be free of Intel ME.
 Chromebooks specifics
 --
 
-Chromebooks have UEFI builds by MrChromebox at http://MrChromebox.tech
+Chromebooks have UEFI builds by [MrChromebox](http://MrChromebox.tech)
 
 After you have flashed his firmware, you won't be able to boot stock 
 ChromeOS anymore, but Linux and Windows (and possibly macOS, in the 
-future) will run.
+future) will.
 
-There are several ways to do it. You can either do the long-way: Follow his 
+There are several ways to do it. You can either do it the long-way: Follow his 
 intructions to have the UEFI firmware installed (do the write protection 
 screw thing), then run ezpi4me route: do the backup-clean-reflash.
 
-You can take the shortcut: Go to
-
-    https://github.com/MattDevo/scripts/blob/master/sources.sh
-
-then look for your `full-rom URL=fullrom_source+coreboot_uefi_yourdev`
+You can take the shortcut: Go to [_MrChromebox.tech_'s ChromeOS firmware scripts repo](https://github.com/MattDevo/scripts/blob/master/sources.sh),
+then look for your `full-rom URL=fullrom_source+coreboot_uefi_yourdev`.
 For example, for Dell Chromebook 13 (lulu) it is:
 
     https://www.mrchromebox.tech/files/firmware/full_rom/coreboot_tiano-lulu-mrchromebox_20180204.rom
 
-Download that file, rename it to `coreboot.bin`.
-Put it in the `coreboot` folder in ezpi4me, run the `make-ezpi4me.sh` script
-Then boot the pi, do the backup-clean-reflash routine. 
+After download the file,
+* rename it to `coreboot.bin`,
+* put it in the `coreboot` folder in ezpi4me,
+* run the `make-ezpi4me.sh` script,
+* boot the pi, and
+* do the backup-clean-reflash routine. 
 
 FAQs
 --
@@ -260,7 +258,7 @@ programmer.
 
 - **Why does anyone want to neuter the Intel ME?** 
 
-It often a matter of principles. 
+It is often a matter of principles. 
 
 Why does anyone run GNU/Linux instead of Windows 10?
 
@@ -268,14 +266,13 @@ Why does anyone run GNU/Linux instead of Windows 10?
 
 No. Even if you use your computer's default firmware, it should work.
 
-In the case of Chromebook it will just mean that you'll run ChromeOS 
+In the case of Chromebook it just means that you'll run ChromeOS 
 without Intel ME. On ChromeOS, you can't check to make sure that the ME 
 is actually gone without root/developer access and a chroot.
 
 - **How do I know my computer is free of Intel ME after I've done this?**
 
-On Linux:
-Clone the coreboot repository, then compile the `intelmetool` and run it.
+On Linux: Clone the coreboot repository, then compile the `intelmetool` and run it.
 
 On Windows: You don't see the Intel ME controller in Device Manager no more.
 
@@ -283,7 +280,7 @@ On Windows: You don't see the Intel ME controller in Device Manager no more.
 
 - **Where is the flash chip?**
 
-It often has 8 legs, but you'll have to search online to see where exactly the
+It often has 8 legs, but you'll have to search online to see where the
 chip is located on your machine model.
 
 If it helps, mine looks like this.
@@ -309,16 +306,15 @@ machine.
 
 It doesn't matter, you select any corner and mark it. Then it's your pin 1.
 
-- **I saw the black SOIC clips on sale on eBay/Aliexpress for much cheaper.
+- **I saw the black SOIC clips on sale on eBay/Aliexpress for a much cheaper price.
 Should I buy one?**
 
-Be mindful of the pitch of the clip legs. Some are not 0.1 inch and it will be 
-a pain to deal with. The Pomona (blue) clips always have 0.1 inch pitch.
+Be mindful of the pitch of the clip legs. Some are not 0.1 inch and it will be a pain to deal with. The Pomona (blue) clips always have 0.1 inch pitch.
 
 - **What do I do if I have a 1.8V chip?**
 
 I don't know. Use a level shifter. I might be able to get a circuit board working
-in the future... That's in the TODO. But you'd have to have additional hardware.
+in the future... That's in the todo list. But you'd have to have additional hardware.
 
 .
 
