@@ -4,4 +4,10 @@
 # Written by Huan Truong <htruong@tnhh.net>, 2018
 # This script is licensed under GNU Public License v3
 
+if ! [ -f bios_backup.bin ]; then
+    echo "I don't see your bios_backup.bin file. Did you forget to backup it first?"
+    echo "Sorry, I can't let you continue without seeing that file first."
+    exit 1
+fi
+
 flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=1000 -w bios_cleaned.bin
