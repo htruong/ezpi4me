@@ -136,8 +136,7 @@ Wirings and flash the hardware
 Wire the SOIC clip to the Pi according to this guide: 
 https://www.flashrom.org/RaspberryPi
 
-All Chromebooks and Thinkpads I'm aware of so far has the same wiring
-scheme:
+All Chromebooks I'm aware of so far has the same wiring scheme:
 
 	              ┌───── Little "dot" on the chip
 	              │ 
