@@ -4,6 +4,11 @@
 # Written by Huan Truong <htruong@tnhh.net>, 2018
 # This script is licensed under GNU Public License v3
 
+# All this does is download the raspbian lite image,
+# extracts it then expands the image so we have more space
+# and finally chroot into it to fetch the me-cleaner
+# flashrom, and plant the ezpi4me support scripts.
+
 IMAGE_FILE=2017-11-29-raspbian-stretch-lite.zip
 IMAGE_FILE_UNZIPPED=2017-11-29-raspbian-stretch-lite.img
 IMAGE_FILE_CUSTOMIZED=ezpi4me.img
@@ -114,8 +119,6 @@ set_up_loopdevs() {
     e2fsck -f ${LOOPDEVPARTS}p2
 
     mount_chroot_dirs ${LOOPDEVPARTS} ${LOOPPARTSID}
-    
-    # now we should have a 
     
     # ld.so.preload fix
     sed -i 's/^/#CHROOT /g' ${TEMP_CHROOT_DIR}/etc/ld.so.preload
