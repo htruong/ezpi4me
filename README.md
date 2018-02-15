@@ -45,8 +45,8 @@ the ME on your computer. Just run some simple commands and connect 6 wires to
 a Raspberry Pi.
 
 I've been thinking about this project for over a year, but prototyping was easy 
-because I can just carry a customized Pi image with me. Now, to release
-to the public the source and customization process, there is a lot of scripting
+because I can just carry a customized Pi image with me. Now, to publish
+the source and customization process, there is a lot of scripting
 needed (because what's the point of advocating removing the 8MB Intel ME blob 
 by releasing a 2GB blob and tell everyone to run it). I finally got up my butt 
 and did it. Every script is simple and can be audited quickly.
@@ -58,20 +58,20 @@ Tested platforms
 This pipeline has been tested to work on a Dell Chromebook 7310. That's all I have.
 
 It should work with many other Chromebooks and Thinkpads, but have not been 
-verified. If you succeeded cleaning your ME with this method, please send me 
+verified. If you succeed cleaning your ME with this method, please send me 
 an email.
 
 
 Beware
 --
 
-**Remember, that ultimately you're responsible for trying this with your machine.**
+**Remember that ultimately you're responsible for trying this with your machine.**
 I can't guarrantee that it will work. I can't guarrantee that what I told you to do 
-won't fry your $4000 laptop. I wrote it the whole thing in ten hours. 
+won't fry your $4000 laptop. I wrote the whole thing in ten hours. 
 
 That being said, I have put every safeguard I could think of and made this process
 as simple and clear as possible. As long as you don't fry your chip by connecting
-a 1.8V chip to the 3.3V Raspberry Pi, the process is entirely undoable. In fact,
+a 1.8V chip to the 3.3V Raspberry Pi, the entirely process is undoable. In fact,
 it won't even work without you backing up first, and it never overwrites the backup
 file.
 
@@ -79,37 +79,42 @@ file.
 Instructions
 --
 
-You will need hardware-wise: a Raspberry Pi (Pi 0 WH is the easiest and cheap),
-a Ponoma SOIC-8 clip and 6 female2female jumper wires, and a microUSB cable.
-You'll also need a microSD card >= 2GB. If you really want to be cheap, buy a 
+Hardware wise, you will need:
+* a Raspberry Pi (Pi 0 WH is the easiest and cheap),
+* a Ponoma SOIC-8 clip,
+* 6 female2female jumper wires,
+* a microUSB cable, and
+* a microSD card >= 2GB.
+
+If you really want to be cheap, buy a 
 Pi 0 original for $5 in Microcenter, but then you'll have to solder the headers.
 
 The Bill of Materials should about less than $50 in total. More likely than not
-you already have everything here, except for the SOIC-8 clip.
+you already have everything, except for the SOIC-8 clip.
 
 ![Raspberry Pi 0 WH](https://i.imgur.com/OcKklYys.jpg)
 ![Female2Female](https://i.imgur.com/SOQtFips.jpg)
 ![SOIC clip](https://i.imgur.com/ovZ6Ao0s.jpg)
 ![MicroSD](https://i.imgur.com/qwgiGlJs.jpg)
 
-Have the "target" computer to clean. Open it up, make sure that it has a SOIC-8
-flash chip. **MAKE VERY SURE** the chip is 3.3V or 3.3V-tolerant. Many 
+Clean the "target" computer, open it up and make sure it has a SOIC-8
+flash chip. **MAKE VERY SURE** that the chip is 3.3V or 3.3V-tolerant. Many 
 Chromebooks use 3.3V chips, but it looks like some use 1.8V chips. 
 
-Look up your flash chip to see what model it is and get the datasheet. That would tell
+Look up your flash chip to see what model it is. The datasheet will tell
 you how to wire the SOIC clip. If you use a Chromebook, then they seem to follow one 
 pattern.
 
 Make sure that [me_cleaner works on your machine](https://github.com/corna/me_cleaner/issues/3)
-If me_cleaner works, this should theoretically also work.
+If me_cleaner works, this should work as well (theoretically).
 
-If you use the Pi 0, you'll need a "spare" computer that can be used to control it,
-alternatively you can attach a set of keyboard/HDMI cables/monitor to type to the
+If you use the Pi 0, you'll need a "spare" computer that can be used to control it.
+Alternatively, you can attach a set of keyboard/HDMI cables/monitor to type to the
 Raspberry Pi. 
 
-The spare computer can run Linux or Windows, doesn't matter. 
+The spare computer can run Linux or Windows, it doesn't matter. 
 I'm not sure about Macs, you'll need to install drivers on Mac to get it to talk
-to the Pi via USB-serial. Easier just to boot your Mac with a live Linux distro.
+to the Pi via USB-serial. It is easier just to boot your Mac with a live Linux distro.
 
 Coreboot/Libreboot
 --
@@ -138,7 +143,7 @@ Debian/Ubuntu:
     $ sudo apt install qemu-user-static kpartx parted 
     $ sudo ./make-ezpi4me.sh
     
-Write the image, should be named `ezpi4me.img` to the micro-SD card. 
+Write the image to the micro-SD card. It should be named `ezpi4me.img`. 
 
     $ sudo dd if=ezpi4me.img of=/dev/Your_MicroSD_card
 
