@@ -1,11 +1,11 @@
 # [EzPi4ME - Getting rid of Intel ME, for mere mortals](http://www.tnhh.net/posts/ezpi4me-intel-me-be-gone.html)
 
-_The easiest, and most straightforward method to get rid of the Intel ME._
+_The easiest straightforward method to get rid of the Intel ME._
 
 This project helps you create a Raspberry Pi image that can clean the 
 Intel ME blob from your machine and optionally install Core/libreboot. 
 
-In other words, "me-cleaner for dummies."
+In other words, "me-cleaner and libre firmware for dummies."
 
 What is the Intel Management Engine/Intel ME?
 --
