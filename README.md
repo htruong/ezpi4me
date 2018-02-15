@@ -280,8 +280,12 @@ If it helps, mine looks like this.
 - **How do I know my chip is 3.3V?**
 
 Look at the markings of the chip, then Google chip_name + datasheet.
-If you have a Winbond W25Q64.V chip, it is sure to be 3.3V tolerant.
+If you have a Winbond W25Q64.V chip, it is sure to be 3.3V.
 
+In general, the generation of your CPU decides whether it is 1.8 or 3.3V
+
+[According to MrChromebox](https://www.reddit.com/r/chrultrabook/comments/5ywa0c/bricked_dell_chromebook_13_doing_coolstar_flash/deu72nr/): 
+"SNB/IVB/HSW/BDW all use 3.3V. BYT/BSW/(SKL?) use 1.8V."
 
 - **Do I need to disconnect the laptop battery when I flash the firmware?**
 
