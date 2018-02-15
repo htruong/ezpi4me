@@ -1,6 +1,6 @@
 # [EzPi4ME - Getting rid of Intel ME, for mere mortals](http://www.tnhh.net/posts/ezpi4me-intel-me-be-gone.html)
 
-_The easiest straightforward method to get rid of the Intel ME._
+> The easiest straightforward method to get rid of the Intel ME.
 
 This project helps you to create a Raspberry Pi image that can clean the 
 Intel ME blob from your machine and optionally install Core/libreboot. 
@@ -150,8 +150,7 @@ Write the image to the micro-SD card. It should be named `ezpi4me.img`.
 Wirings and flash the hardware
 --
 
-Wire the SOIC clip to the Pi according to this guide: 
-https://www.flashrom.org/RaspberryPi
+Wire the SOIC clip to the Pi according to [this guide](https://www.flashrom.org/RaspberryPi).
 
 All Chromebooks I'm aware of so far have the same wiring scheme.
 Not sure about Thinkpads, please refer to the datasheets:
@@ -224,7 +223,7 @@ After you ran those commands, the "target" computer will be free of Intel ME.
 Chromebooks specifics
 --
 
-Chromebooks have UEFI builds by MrChromebox at http://MrChromebox.tech
+Chromebooks have UEFI builds by [MrChromebox](http://MrChromebox.tech)
 
 After you have flashed his firmware, you won't be able to boot stock 
 ChromeOS anymore, but Linux and Windows (and possibly macOS, in the 
