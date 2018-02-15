@@ -81,7 +81,7 @@ Instructions
 
 Hardware wise, you will need:
 * a Raspberry Pi (Pi 0 WH is the easiest and cheap),
-* a Ponoma SOIC-8 clip,
+* a Pomona SOIC-8/SOIC-16 clip,
 * 6 female2female jumper wires,
 * a microUSB cable, and
 * a microSD card >= 2GB.
@@ -309,8 +309,7 @@ It doesn't matter, you select any corner and mark it. Then it's your pin 1.
 - **I saw the black SOIC clips on sale on eBay/Aliexpress for a much cheaper price.
 Should I buy one?**
 
-Be mindful of the pitch of the clip legs. Some are not 0.1 inch and it will be 
-a pain to deal with. The Panoma (blue) one works well.
+Be mindful of the pitch of the clip legs. Some are not 0.1 inch and it will be a pain to deal with. The Pomona (blue) clips always have 0.1 inch pitch.
 
 - **What do I do if I have a 1.8V chip?**
 
