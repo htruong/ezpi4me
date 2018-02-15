@@ -9,7 +9,8 @@ What is the Intel Management Engine/Intel ME?
 --
 
 It's a binary blob on your firmware in the flash chip. It's a software that runs
-independently of the main CPU on a co-processor all the times (even when the machine is off)
+independently of the main CPU on a co-processor/microcontroller on the PCH.
+Intel ME runs even when the machine is off, 
 and before anything on your machine with the highest ring permission. It can access
 anything on your computer. It does a lot of (good?) things, but no one knows exactly 
 what the Intel ME is capable of.
@@ -21,9 +22,9 @@ what the Intel ME is capable of.
 What exactly does this process do to eliminate the Intel ME?
 --
 
-The ME firmware is very big, so the code doesn't reside on the Intel CPU hardware. The firmware has to be fed to the Intel CPU from somewhere. That somewhere is, in practice, a region of the flash chip of the computer. The ME firmware takes something like 512K-3MB in that 8MB chip. There is a hardware watchdog on the Intel CPU that checks if the operation of the ME firmware after the computer is on for half an hour. If it realizes that the ME is not operational at all, it will reset the machine. When the firmware runs, it sets certain (hidden/privileged) registers or memory values to the correct values signaling to the watchdog that it's operational, and thus makes the hardware watchdog happy.
+The ME firmware is very big, so the code doesn't reside on the coprocessor hardware. The firmware has to be fed to the coprocessor from somewhere. That somewhere is, in practice, a region of the flash chip of the computer. The ME firmware takes something like 512K-3MB in that 8MB chip. There is a hardware watchdog on the coprocessor that checks if the operation of the ME firmware after the computer is "on" for half an hour. If it realizes that the ME is not operational at all, it will reset the CPU. When the firmware runs, it sets certain (hidden/privileged) registers or memory values to the correct values signaling to the watchdog that it's operational, and thus makes the hardware watchdog happy.
 
-The problem is you can't just feed the CPU a totally bogus ME code. Before the CPU runs the code, it will check certain signatures and if the signature doesn't match, the CPU won't run it. The me-cleaner software changes the firmware in an extremely clever way: the botched code still passes some minimum security requirements, the CPU still executes it, and it still flags the ME as somewhat operational, and thus the watchdog is still happy.
+The problem is you can't just feed the coprocessor a totally bogus ME code. Before the CPU runs the code, it will check certain signatures and if the signature doesn't match, the CPU won't run it. The me-cleaner software changes the firmware in an extremely clever way: the botched code still passes some minimum security requirements, the CPU still executes it, and it still flags the ME as somewhat operational, and thus the watchdog is still happy.
 
 Now the layout of the firmware has also one more tidbit. On the firmware, you can mark a certain region of the chip to be extremely critical, to prevent that region from ever be written on. In the factory firmware, the ME region is often marked as extremely critical, that's why you can't just change the ME firmware from the machine itself (even when you can update and flash a new firmware from the machine itself).
 
@@ -68,7 +69,9 @@ won't fry your $4000 laptop. I wrote it the whole thing in ten hours.
 
 That being said, I have put every safeguard I could think of and made this process
 as simple and clear as possible. As long as you don't fry your chip by connecting
-a 1.8V chip to the 3.3V Raspberry Pi, the process is entirely undoable.
+a 1.8V chip to the 3.3V Raspberry Pi, the process is entirely undoable. In fact,
+it won't even work without you backing up first, and it never overwrites the backup
+file.
 
 
 Instructions
@@ -89,7 +92,10 @@ you already have everything here, except for the SOIC-8 clip.
 
 Have the "target" computer to clean. Open it up, make sure that it has a SOIC-8
 flash chip. **MAKE VERY SURE** the chip is 3.3V or 3.3V-tolerant. Many 
-Chromebooks use 3.3V chips, but it looks like some use 1.8V chips.
+Chromebooks use 3.3V chips, but it looks like some use 1.8V chips. 
+
+Make sure that [me_cleaner works on your machine](https://github.com/corna/me_cleaner/issues/3)
+If me_cleaner works, this should theoretically also work.
 
 If you use the Pi 0, you'll need a "spare" computer that can be used to control it,
 alternatively you can attach a set of keyboard/HDMI cables/monitor to type to the
