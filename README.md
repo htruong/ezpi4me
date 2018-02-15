@@ -94,6 +94,10 @@ Have the "target" computer to clean. Open it up, make sure that it has a SOIC-8
 flash chip. **MAKE VERY SURE** the chip is 3.3V or 3.3V-tolerant. Many 
 Chromebooks use 3.3V chips, but it looks like some use 1.8V chips. 
 
+Look up your flash chip to see what model it is and get the datasheet. That would tell
+you how to wire the SOIC clip. If you use a Chromebook, then they seem to follow one 
+pattern.
+
 Make sure that [me_cleaner works on your machine](https://github.com/corna/me_cleaner/issues/3)
 If me_cleaner works, this should theoretically also work.
 
@@ -136,7 +140,8 @@ Wirings and flash the hardware
 Wire the SOIC clip to the Pi according to this guide: 
 https://www.flashrom.org/RaspberryPi
 
-All Chromebooks I'm aware of so far has the same wiring scheme:
+All Chromebooks I'm aware of so far has the same wiring scheme.
+Not sure about Thinkpads, please refer to the datasheets:
 
 	              ┌───── Little "dot" on the chip
 	              │ 
