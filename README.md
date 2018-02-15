@@ -326,10 +326,11 @@ root access can write over your UEFI firmware. I leave it fastened.
 Thanks
 --
 
-- Code & knowledge: me-cleaner, Coreboot, John Lewis, /r/chrultrabook.
+- Code & knowledge: me-cleaner, MrChromebox, Coreboot, John Lewis, /r/chrultrabook.
 
-- My personal thanks to Dr. Don Bindner, bunnie, vnhacker 
-for advice and support.
+- My personal thanks to [Don Bindner](http://dbindner.freeshell.org/) for chroot,
+ideas and linux discussions in general, [vnhacker](https://vnhacker.blogspot.com/)
+for encouragements, [bunnie](https://www.bunniestudios.com/) for advice and support.
 
 
 Have fun!
