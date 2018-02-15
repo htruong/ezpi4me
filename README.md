@@ -3,7 +3,9 @@
 _The easiest, and most straightforward method to get rid of the Intel ME._
 
 This project helps you create a Raspberry Pi image that can clean the 
-Intel ME blob from your machine. In other words, "me-cleaner for dummies."
+Intel ME blob from your machine and optionally install Core/libreboot. 
+
+In other words, "me-cleaner for dummies."
 
 What is the Intel Management Engine/Intel ME?
 --
@@ -109,15 +111,21 @@ The spare computer can run Linux or Windows, doesn't matter.
 I'm not sure about Macs, you'll need to install drivers on Mac to get it to talk
 to the Pi via USB-serial. Easier just to boot your Mac with a live Linux distro.
 
+Coreboot/Libreboot
+--
+
+If you want to flash coreboot at the same time you clean the ME, you need 
+to put the ROM file you prepared to the folder `coreboot` 
+and name it `coreboot.bin`. It will be copied to `/home/pi/coreboot.bin`. 
+The cleaning script will prioritize cleaning/flashing the coreboot image over
+the stock image pulled from the chip.
+
+
 Prepare the image
 --
 
 Now you can run the script in this repo in any Linux distro to 
 create a ezpi4me image. Some of live distros are alright. Don't use Windows.
-
-If you want to also flash coreboot at the same time you clean the ME, you need 
-to put the ROM file you prepared to the folder `coreboot` 
-and name it `coreboot.bin`. It will be copied to `/home/pi/coreboot.rom`.
 
 Fedora:
 
