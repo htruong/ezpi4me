@@ -2,7 +2,7 @@
 
 _The easiest straightforward method to get rid of the Intel ME._
 
-This project helps you create a Raspberry Pi image that can clean the 
+This project helps you to create a Raspberry Pi image that can clean the 
 Intel ME blob from your machine and optionally install Core/libreboot. 
 
 In other words, "me-cleaner and libre firmware for dummies."
@@ -12,7 +12,7 @@ What is the Intel Management Engine/Intel ME?
 
 It's a binary blob on your firmware in the flash chip. It's a software that runs
 independently of the main CPU on a co-processor/microcontroller on the PCH.
-Intel ME runs even when the machine is off, 
+Intel ME runs even when the machine is off 
 and before anything on your machine with the highest ring permission. It can access
 anything on your computer. It does a lot of (good?) things, but no one knows exactly 
 what the Intel ME is capable of.
@@ -24,13 +24,13 @@ what the Intel ME is capable of.
 What exactly does this process do to eliminate the Intel ME?
 --
 
-The ME firmware is very big, so the code doesn't reside on the coprocessor hardware. The firmware has to be fed to the coprocessor from somewhere. That somewhere is, in practice, a region of the flash chip of the computer. The ME firmware takes something like 512K-3MB in that 8MB chip. There is a hardware watchdog on the coprocessor that checks if the operation of the ME firmware after the computer is "on" for half an hour. If it realizes that the ME is not operational at all, it will reset the CPU. When the firmware runs, it sets certain (hidden/privileged) registers or memory values to the correct values signaling to the watchdog that it's operational, and thus makes the hardware watchdog happy.
+The ME firmware is very big, so the code doesn't reside on the coprocessor hardware. The firmware has to be fed to the coprocessor from somewhere. That _somewhere_ is, in practice, a region of the flash chip of the computer. The ME firmware takes something like 512K-3MB in that 8MB chip. There is a hardware watchdog on the coprocessor that checks if the operation of the ME firmware is "on" for half an hour after the boot process. If it realizes that the ME is not operational at all, it will reset the CPU. When the firmware runs, it sets certain (hidden/privileged) registers or memory values to signal the watchdog that it's operational, thus makeing the hardware watchdog happy.
 
-The problem is you can't just feed the coprocessor a totally bogus ME code. Before the coprocessor runs the code, it will check certain signatures and if the signature doesn't match, the coprocessor won't run it. The me-cleaner software changes the firmware in a clever way: the botched code still passes some minimum security requirements, the coprocessor still executes it, and it still flags the ME as somewhat operational, and thus the watchdog is still happy.
+The problem is you can't just feed the coprocessor a totally bogus ME code. Before the coprocessor runs the code, it will check certain signatures and if they don't match, the coprocessor won't run it. The me-cleaner software changes the firmware in a clever way: The botched code still passes some minimum security requirements, the coprocessor still executes it, and it still flags the ME as somewhat operational, thus the watchdog is still happy.
 
-Now the layout of the firmware has also one more tidbit. On the firmware, you can mark a certain critical regions of the chip to be read-only, to prevent that region from ever be written on. In the factory firmware, the ME region is often marked as read only, that's why you can't just change the ME firmware from the machine itself (even when you can update and flash a new firmware from the machine itself).
+Now the layout of the firmware has also one more tidbit. On the firmware, you can mark certain critical regions of the chip to be read-only to prevent that region from ever being written on. In the factory firmware, the ME region is often marked as read only, that's why you can't change the ME firmware from the machine itself (even if you can update and flash a new firmware from the machine itself).
 
-In short, an analogy of that that is like you can't install and run the anti-virus from an infected computer - if the virus itself is smart enough, it could prevent any anti-virus being run. You'd have to start with a clean computer, and plug the infected HDD in, and clean it from there. The Raspberry Pi is acting as the "clean" computer to clean the virus here.
+Analogy of that is like you can't install and run the anti-virus from an infected computer. If the virus itself is smart enough, it could prevent any anti-virus being run. You will have to start with a clean computer, and plug the infected HDD in, and clean it from there. The Raspberry Pi is acting as the "clean" computer to clean the virus here.
 
 
 Why did I do this? 
