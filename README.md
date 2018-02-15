@@ -339,7 +339,8 @@ Thanks
 
 - My personal thanks to [Don Bindner](http://dbindner.freeshell.org/) for chroot,
 ideas and linux discussions in general, [vnhacker](https://vnhacker.blogspot.com/)
-for encouragements, [bunnie](https://www.bunniestudios.com/) for advice and support.
+for encouragements, [bunnie](https://www.bunniestudios.com/) for advice and support,
+[chrunchyjesus](https://github.com/chrunchyjesus) for proofreading and formatting the readme.
 
 
 Have fun!
