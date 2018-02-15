@@ -339,6 +339,4 @@ Have questions? Create an issue on Github.
 
 Comments? [Go to my blog](http://www.tnhh.net/posts/ezpi4me-intel-me-be-gone.html).
 
-Donations are welcome but not required. Paypal to htruong@tnhh.net.
-
 
