@@ -203,7 +203,7 @@ requiring you to type, however I would rather have you to see and control the pr
 
 Connect the chip on the "target" to the SOIC clip. Make sure leg #1 matches :)
 
-![Connect](https://i.imgur.com/a9rcEy6.jpg)
+![Connect](https://user-images.githubusercontent.com/20382692/36319971-d9a08c1c-1344-11e8-9720-4f81d07d4558.jpg)
 
 Log in with username _pi_, and password _raspberry_.
 Anyway, now you're at the command line.
@@ -217,7 +217,7 @@ ezpi4me has the following utilities. Run them in this order:
 
 After you ran those commands, the "target" computer will be free of Intel ME.
 
-![Command line](https://i.imgur.com/fATqixY.png)
+![Command line](https://user-images.githubusercontent.com/20382692/36319974-d9e7b286-1344-11e8-8106-ccf5bf809fec.gif)
 
 
 Chromebooks specifics
@@ -276,7 +276,7 @@ On Linux: Clone the coreboot repository, then compile the `intelmetool` and run 
 
 On Windows: You don't see the Intel ME controller in Device Manager no more.
 
-![intelmetool](https://i.imgur.com/KN0yyKt.png)
+![intelmetool](https://user-images.githubusercontent.com/20382692/36319973-d9c570e0-1344-11e8-9bdf-dd9c6c2790fa.gif)
 
 - **Where is the flash chip?**
 
@@ -285,7 +285,7 @@ chip is located on your machine model.
 
 If it helps, mine looks like this.
 
-![chip](https://i.imgur.com/MVtMyXv.jpg)
+![chip](https://user-images.githubusercontent.com/20382692/36319970-d968bf94-1344-11e8-9af3-39cbbf3fa49a.jpg)
 
 - **How do I know my chip is 3.3V?**
 
